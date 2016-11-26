@@ -7,7 +7,12 @@ var bodyParser = require('body-parser');
 
 var index = require('./routes/index');
 var users = require('./routes/users');
-var motor = require('./routes/motor');
+var motor1 = require('./routes/motor1');
+var motor2 = require('./routes/motor2');
+var motor3 = require('./routes/motor3');
+var motor4 = require('./routes/motor4');
+var cleanup = require('./routes/cleanup');
+var calibrate = require('./routes/calibrate');
 
 var app = express();
 
@@ -30,7 +35,12 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
 app.use('/users', users);
-app.use('/motor', motor);
+app.use('/motor1', motor1);
+app.use('/motor2', motor2);
+app.use('/motor3', motor3);
+app.use('/motor4', motor4);
+app.use('/cleanup', cleanup);
+app.use('/calibrate', calibrate);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
